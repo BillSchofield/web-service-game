@@ -1,16 +1,14 @@
-var counter = document.getElementById('counter');
 var tRex = document.getElementById('t-rex');
-var responseText = document.getElementById('rt');
-var position = 0;
 
 function gameLoop() {
-
-    $.post("http://localhost:8080/position",
-        {position: position},
-        function(data, status){
-        });
-
-
+    $.ajax({
+        url : 'http://localhost:8080/position.html',
+        success : function(data) {
+            var tokens = data.split(" ");
+            tRex.style.left = tokens[0] + "px";
+            tRex.style.top = tokens[1] + "px";
+        }
+    });
 }
 
 var framesPerSecond = 1000 / 60;

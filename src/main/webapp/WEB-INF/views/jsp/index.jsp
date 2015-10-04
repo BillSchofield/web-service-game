@@ -8,76 +8,21 @@
     <link href="${coreCss}" rel="stylesheet"/>
 </head>
 <body>
-<%--<nav class="navbar navbar-inverse navbar-fixed-top">--%>
-    <%--<div class="container">--%>
-        <%--<div class="navbar-header">--%>
-            <%--<a class="navbar-brand" href="#">Project Name</a>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</nav>--%>
+<canvas id="canvas" width="800" height="600"></canvas>
 
-<div id="counter"></div>
-<img id="t-rex" src="/resources/img/t-rex.jpg" style="position:absolute;">
-
-
-<%--<div class="jumbotron">--%>
-    <%--<div class="container">--%>
-        <%--<h1>${title}</h1>--%>
-
-        <%--<p>--%>
-            <%--<c:if test="${not empty msg}">--%>
-            <%--Hello ${msg}--%>
-            <%--</c:if>--%>
-
-            <%--<c:if test="${empty msg}">--%>
-            <%--Welcome Welcome!--%>
-            <%--</c:if>--%>
-
-        <%--<p>--%>
-            <%--<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>--%>
-        <%--</p>--%>
-    <%--</div>--%>
-<%--</div>--%>
-
-<%--<div class="container">--%>
-
-    <%--<div class="row">--%>
-        <%--<div class="col-md-4">--%>
-            <%--<h2>Heading</h2>--%>
-
-            <%--<p>ABC</p>--%>
-
-            <%--<p>--%>
-                <%--<a class="btn btn-default" href="#" role="button">View details</a>--%>
-            <%--</p>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4">--%>
-            <%--<h2>Heading</h2>--%>
-
-            <%--<p>ABC</p>--%>
-
-            <%--<p>--%>
-                <%--<a class="btn btn-default" href="#" role="button">View details</a>--%>
-            <%--</p>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4">--%>
-            <%--<h2>Heading</h2>--%>
-
-            <%--<p>ABC</p>--%>
-
-            <%--<p>--%>
-                <%--<a class="btn btn-default" href="#" role="button">View details</a>--%>
-            <%--</p>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-
-
-<%--</div>--%>
 <hr>
 <div id="rt"/>
 
 <spring:url value="/resources/core/css/bootstrap.min.js" var="bootstrapJs"/>
-<script src="/resources/core/js/jquery-1.11.3.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/resources/core/js/jquery-1.11.3.js"><\/script>')</script>
+<script src="/resources/core/js/vector2d.js"></script>
+<script src="/resources/core/js/sprite.js"></script>
+<script src="/resources/core/js/entity2d.js"></script>
+<script src="/resources/core/js/entityFactory.js"></script>
+<script src="/resources/core/js/keyBoardEventHandler.js"></script>
+<script src="/resources/core/js/loop.js"></script>
+<script src="/resources/core/js/runner.js"></script>
 <script src="/resources/core/js/main.js"></script>
 
 </body>

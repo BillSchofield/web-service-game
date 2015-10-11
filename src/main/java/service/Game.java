@@ -18,7 +18,7 @@ public class Game  {
         entity.update();
     }
 
-    public Entity entity() {
+    public Entity entity(String id) {
         return entity;
     }
 }

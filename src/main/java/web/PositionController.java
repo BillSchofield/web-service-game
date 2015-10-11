@@ -23,24 +23,24 @@ public class PositionController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/position", method = RequestMethod.GET)
+	@RequestMapping(value = "/position/{id}", method = RequestMethod.GET)
 	public @ResponseBody
-	String position() {
-		return game.entity().position();
+	String position(String id) {
+		return game.entity(id).position();
 	}
 
-	@RequestMapping(value = "/accelerate", method = RequestMethod.POST)
-	public void accelerate() {
-		game.entity().accelerate();
+	@RequestMapping(value = "/accelerate/{id}", method = RequestMethod.POST)
+	public void accelerate(String id) {
+		game.entity(id).accelerate();
 	}
 
-	@RequestMapping(value = "/stop", method = RequestMethod.POST)
-	public void stop() {
-		game.entity().reset();
+	@RequestMapping(value = "/stop/{id}", method = RequestMethod.POST)
+	public void stop(String id) {
+		game.entity(id).reset();
 	}
 
-	@RequestMapping(value = "/rotate", method = RequestMethod.POST)
-	public void rotate(String delta) {
-		game.entity().rotate(Double.parseDouble(delta));
+	@RequestMapping(value = "/rotate/{id}", method = RequestMethod.POST)
+	public void rotate(String id, String delta) {
+		game.entity(id).rotate(Double.parseDouble(delta));
 	}
 }

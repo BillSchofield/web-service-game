@@ -13,7 +13,7 @@ game.entity2d = function (spec) {
 
     that.update = function () {
         $.ajax({
-            url: 'http://localhost:8080/position.html',
+            url: 'http://localhost:8080/position/' + id,
             success: function (data) {
                 var tokens = data.split(" ");
                 var x = 1 * id * tokens[0];
@@ -37,7 +37,7 @@ game.entity2d = function (spec) {
     };
 
     that.rotateLeft = function () {
-        $.post("http://localhost:8080/rotate.html",
+        $.post("http://localhost:8080/rotate/" + id ,
             {
                 delta: "-10"
             },
@@ -46,7 +46,7 @@ game.entity2d = function (spec) {
     };
 
     that.rotateRight = function () {
-        $.post("http://localhost:8080/rotate.html",
+        $.post("http://localhost:8080/rotate/" + id,
             {
                 delta: "10"
             },
@@ -55,14 +55,14 @@ game.entity2d = function (spec) {
     };
 
     that.accelerate = function () {
-        $.post("http://localhost:8080/accelerate.html",
+        $.post("http://localhost:8080/accelerate/" + id,
             {},
             function (data, status) {
             });
     };
 
     that.stop = function () {
-        $.post("http://localhost:8080/stop.html",
+        $.post("http://localhost:8080/stop/" + id,
             {},
             function (data, status) {
             });

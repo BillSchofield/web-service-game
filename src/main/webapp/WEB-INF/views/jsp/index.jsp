@@ -3,15 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss"/>
-    <link href="${bootstrapCss}" rel="stylesheet"/>
-    <link href="${coreCss}" rel="stylesheet"/>
 </head>
-<body>
-<canvas id="canvas" width="800" height="600"></canvas>
 
-<hr>
-<div id="rt"/>
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
 
 <spring:url value="/resources/core/css/bootstrap.min.js" var="bootstrapJs"/>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

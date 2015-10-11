@@ -5,19 +5,19 @@ var game = game || {};
 game.keyPressEventHandler = function(spec){
     var that = {};
 
-    var entity = spec.entity;
+    var player = spec.player;
 
     var keyResponses = {
-        37 : function(entity){entity.rotateLeft();},
-        38 : function(entity){entity.accelerate();},
-        39 : function(entity){entity.rotateRight();},
-        40 : function(entity){entity.stop();}
+        37 : function(player){player.rotateLeft();},
+        38 : function(player){player.accelerate();},
+        39 : function(player){player.rotateRight();},
+        40 : function(player){player.stop();}
     };
 
     that.handle = function(event) {
         var keyPress = event.which;
         if (keyPress in keyResponses) {
-            keyResponses[keyPress](entity);
+            keyResponses[keyPress](player);
         }
     };
 

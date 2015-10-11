@@ -1,9 +1,12 @@
 package service;
 
 public class Vector2d {
-    public final static Vector2d zero = new Vector2d(0, 0);
     private double x;
     private double y;
+
+    public static Vector2d zero(){
+        return new Vector2d(0, 0);
+    }
 
     public Vector2d(double x, double y) {
         this.x = x;

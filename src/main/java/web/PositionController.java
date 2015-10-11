@@ -17,7 +17,6 @@ public class PositionController {
 		this.game = game;
 	}
 
-
 	@RequestMapping(value = "/")
 	public ModelAndView view() {
 		ModelAndView modelAndView = new ModelAndView("index", "message", "Spacegame Model");

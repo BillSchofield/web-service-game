@@ -2,6 +2,7 @@ package service;
 
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
+import static service.Vector2d.*;
 
 public class Entity {
     private double rotationInRadians = 0;
@@ -15,7 +16,7 @@ public class Entity {
     }
 
     public void accelerate(){
-        double amount = 0.01;
+        double amount = 0.02;
         Vector2d impulse = new Vector2d(sin(-rotationInRadians), cos(rotationInRadians));
         impulse.scale(amount);
         velocity.add(impulse);
@@ -32,8 +33,8 @@ public class Entity {
     }
 
     public void reset() {
-        acceleration = Vector2d.zero;
-        velocity = Vector2d.zero;
-        position = center;
+        acceleration = zero();
+        velocity = zero();
+        position = new Vector2d(200, 200);
     }
 }

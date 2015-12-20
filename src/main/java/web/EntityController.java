@@ -9,11 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 import service.Game;
 
 @Controller
-public class PositionController {
+public class EntityController {
 	private Game game;
 
 	@Autowired
-	public PositionController(Game game) {
+	public EntityController(Game game) {
 		this.game = game;
 	}
 
@@ -25,22 +25,22 @@ public class PositionController {
 
 	@RequestMapping(value = "/position/{id}", method = RequestMethod.GET)
 	public @ResponseBody
-	String position(String id) {
+	String position(Integer id) {
 		return game.entity(id).position();
 	}
 
 	@RequestMapping(value = "/accelerate/{id}", method = RequestMethod.POST)
-	public void accelerate(String id) {
+	public void accelerate(Integer id) {
 		game.entity(id).accelerate();
 	}
 
 	@RequestMapping(value = "/stop/{id}", method = RequestMethod.POST)
-	public void stop(String id) {
+	public void stop(Integer id) {
 		game.entity(id).reset();
 	}
 
 	@RequestMapping(value = "/rotate/{id}", method = RequestMethod.POST)
-	public void rotate(String id, String delta) {
+	public void rotate(Integer id, String delta) {
 		game.entity(id).rotate(Double.parseDouble(delta));
 	}
 }

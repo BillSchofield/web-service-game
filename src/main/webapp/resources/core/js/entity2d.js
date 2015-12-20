@@ -11,19 +11,6 @@ game.entity2d = function (spec) {
     var sprite = spec.sprite;
     var id = spec.id;
 
-    that.update = function () {
-        $.ajax({
-            url: 'http://localhost:8080/position/' + id,
-            success: function (data) {
-                var tokens = data.split(" ");
-                var x = 1 * id * tokens[0];
-                position = game.vector2d({x: x, y: tokens[1]});
-                rotation = tokens[2];
-            }
-        });
-
-    };
-
     that.draw = function () {
         sprite.draw(position, rotation);
     };

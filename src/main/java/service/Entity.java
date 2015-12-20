@@ -6,10 +6,13 @@ import static service.Vector2d.*;
 
 public class Entity {
     private double rotationInRadians = 0;
-    private final static Vector2d center = new Vector2d(200, 200);
-    private Vector2d position = center;
+    private Vector2d position;
     private Vector2d velocity = new Vector2d(0, 0);
     private Vector2d acceleration = new Vector2d(0, 0);
+
+    public Entity(Vector2d position) {
+        this.position = position;
+    }
 
     public void rotate(double angleInDegrees) {
         rotationInRadians += Math.PI * angleInDegrees/360;
